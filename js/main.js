@@ -20,10 +20,11 @@ function onYouTubeIframeAPIReady() {
 }
 
 jQuery(document).ready(function($) {
-  
-  $('#change').on('click', function() {
+
+  $('#videoId').on('submit', function(e) {
+    e.preventDefault();
     player.loadVideoById($('#url').val());
+    return false;
   });
 
 });
-
