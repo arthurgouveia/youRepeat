@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link href='http://fonts.googleapis.com/css?family=Arvo:400,700|Oswald:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/style.css">
-        
+
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -25,16 +25,18 @@
 
             <h1 class="pull-left">You<span>Repeat</span></h1>
 
-            <div id="videoId" class="pull-right clearfix">
+            <form id="videoId" class="pull-right clearfix">
 
-                <button class="pull-right"id="change">Loop Me!</button>
+                <button type="submit" class="pull-right" id="change">Loop Me!</button>
                 <input type="text" id="url" value="" class="pull-right" placeholder="Insert YouTube Video ID like opGVNLImgw4">
 
-            </div>
+            </form>
 
         </header>
 
         <section class="wrapper">
+
+            <div id="invalid"><span></span> is not a valid YouTube ID.</div>
 
             <div id="player"></div>
 
@@ -44,7 +46,7 @@
 
         <footer class="wrapper">
             <p class="pull-left">
-              &copy; 2012 - Arthur Gouveia | <a href="http://arthurgouveia.com" target="_blank">arthurgouveia.com</a>
+              &copy; 2015 - Arthur Gouveia | <a href="http://arthurgouveia.com" target="_blank">arthurgouveia.com</a>
             </p>
             <p class="pull-right">
               Available under the <a href="http://opensource.org/licenses/mit-license.php">MIT License</a>

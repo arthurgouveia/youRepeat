@@ -136,6 +136,23 @@ h1 {
     width:960px;
 }
 
+#invalid {
+  display: none;
+  padding: 20px;
+  margin: 20px auto;
+  width: 60%;
+  font-size: 20px;
+  text-align: center;
+  background: #f09f9f;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+
+  span {
+    font-weight: bold;
+  }
+}
+
 .pull-left {float: left;}
 .pull-right {float: right;}
 
