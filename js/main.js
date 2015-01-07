@@ -7,6 +7,15 @@
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+  var STATE = {
+    UNSTARTED: -1,
+    ENDED: 0,
+    PLAYING: 1,
+    PAUSED: 2,
+    BUFFERING: 3,
+    VIDEO_CUED: 5
+  };
+
   var player;
   window.onYouTubeIframeAPIReady = function() {
     player = new YT.Player('player', {
@@ -17,7 +26,13 @@
         loop: '1'
       },
       events: {
-        onReady: onReady
+        onReady: onReady,
+        onStateChange: function (e) {
+          if (e.data === STATE.ENDED) {
+            // Replay video.
+            e.target.seekTo(0);
+          }
+        }
       }
     });
 
@@ -26,16 +41,16 @@
 
       // Add listeners and load eventual video from hash when player is ready.
       jQuery(document).ready(function($) {
-        var regex = /^\s?(https?:\/\/)?(www.)?(youtube.com)?(\/watch\?v=)?([a-zA-Z0-9_-]{11})\s?$/;
+        var regex = /^\s?(https?:\/\/)?(www.)?(youtube.com\/watch\?v=)?([a-zA-Z0-9_-]{11})\s?$/;
         var $url = $('#url');
         var $invalid = $('#invalid');
-        
+
         playVideo = function (video_id) {
           $invalid.hide();
           var val = video_id || $url.val();
           var res = regex.exec(val);
           if (res) {
-            var videoId = res[5];
+            var videoId = res[4];
             player.loadVideoById(videoId);
             window.location.hash = videoId;
           } else {
