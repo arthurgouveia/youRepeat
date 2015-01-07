@@ -77,27 +77,27 @@ textarea {
    Author's custom styles
    ========================================================================== */
 body {
-  background: #ebebeb url(/img/bg-body.png) repeat;
+  background: #EBEBEB url(/img/bg-body.png) repeat;
   color: #333;
   font-size: 62.5%;
   font-family: 'Arvo', Helvetica, Arial, serif; }
 
 .youtube-btn, h1 span, button {
-  background: #ce332d;
+  background: #CE332D;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #ce332d 0%, #942420 100%);
+  background: -moz-linear-gradient(top, #CE332D 0%, #942420 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ce332d), color-stop(100%, #942420));
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #CE332D), color-stop(100%, #942420));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #ce332d 0%, #942420 100%);
+  background: -webkit-linear-gradient(top, #CE332D 0%, #942420 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #ce332d 0%, #942420 100%);
+  background: -o-linear-gradient(top, #CE332D 0%, #942420 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #ce332d 0%, #942420 100%);
+  background: -ms-linear-gradient(top, #CE332D 0%, #942420 100%);
   /* IE10+ */
-  background: linear-gradient(to bottom, #ce332d 0%, #942420 100%);
+  background: linear-gradient(to bottom, #CE332D 0%, #942420 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$youTube-bg-color-top', endColorstr='$youTube-bg-color-bottom',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$youTube-bg-color-top', endColorstr='$youTube-bg-color-bottom',GradientType=0 );
   /* IE6-9 */
   color: #fff;
   text-shadow: 1px 1px 2px #000; }
@@ -116,6 +116,20 @@ h1 {
 .wrapper {
   margin: 0 auto;
   width: 960px; }
+
+#invalid {
+  display: none;
+  padding: 20px;
+  margin: 20px auto;
+  width: 60%;
+  font-size: 20px;
+  text-align: center;
+  background: #f09f9f;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px; }
+  #invalid span {
+    font-weight: bold; }
 
 .pull-left {
   float: left; }
@@ -296,7 +310,6 @@ button {
 
   @page {
     margin: 0.5cm; }
-
   p,
   h2,
   h3 {

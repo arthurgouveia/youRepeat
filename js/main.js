@@ -21,9 +21,24 @@ function onYouTubeIframeAPIReady() {
 
 jQuery(document).ready(function($) {
 
+  var regex = /^\s?(https?:\/\/)?(www.)?(youtube.com)?(\/watch\?v=)?([a-zA-Z0-9_-]{11})\s?$/;
+  var $url = $('#url');
+  var $invalid = $('#invalid');
+
   $('#videoId').on('submit', function(e) {
     e.preventDefault();
-    player.loadVideoById($('#url').val());
+    $invalid.hide();
+
+    var val = $url.val();
+    var res = regex.exec(val);
+    if (res) {
+      var videoId = res[5];
+      player.loadVideoById(videoId);
+    } else {
+      // Invalid value
+      $invalid.find('span').text(val);
+      $invalid.show();
+    }
     return false;
   });
 
